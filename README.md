@@ -4,10 +4,10 @@ Git on IPFS
 
 ## Features
 
-[x] IPFS backed storage
-[x] HTTP git transport
-[] SSH git transport
-[] P2P git transport
+- [x] IPFS backed storage
+- [x] HTTP git transport
+- [ ] SSH git transport
+- [ ] P2P git transport
 
 ## Building
 
