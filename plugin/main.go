@@ -14,7 +14,7 @@ var Plugins = []plugin.Plugin{
 
 var _ plugin.PluginDaemon = (*GitPlugin)(nil)
 
-type GitPlugin struct {}
+type GitPlugin struct{}
 
 func (p *GitPlugin) Name() string {
 	return "ipfs-git"

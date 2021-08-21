@@ -1,24 +1,17 @@
 # go-ipfs-git
 
-IPFS plugin that adds a git remote to your node.
+Git on IPFS
+
+## Features
+
+[x] IPFS backed storage
+[x] HTTP git transport
+[] SSH git transport
+[] P2P git transport
 
 ## Building
 
-Go plugins only work in linux.
-
-```bash
-git clone https://github.com/valist-io/go-ipfs-git
-
-cd go-ipfs-git
-
-go build -buildmode=plugin -o=git.so ./plugin
-
-mkdir -p ~/.ipfs/plugins
-
-mv git.so ~/.ipfs/plugins/
-
-chmod +x ~/.ipfs/plugins/git.so
-```
+See [plugin](./plugin) directory for build instructions.
 
 ## Contributing
 

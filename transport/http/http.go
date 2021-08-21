@@ -45,9 +45,6 @@ func (s *handler) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	default:
 		http.NotFound(w, req)
 	}
-
-	// incase sideband muxer didn't send final pkt line
-	fmt.Fprintf(w, "0000")
 }
 
 func (s *handler) loadStorage(ctx context.Context, rpath string) (*storage.Storage, error) {
@@ -92,6 +89,8 @@ func (s *handler) uploadPack(w http.ResponseWriter, req *http.Request) error {
 		sessres.Encode(w)
 	}
 
+	// incase sideband muxer didn't send final pkt line
+	fmt.Fprintf(w, "0000")
 	return nil
 }
 
@@ -145,6 +144,8 @@ func (s *handler) receivePack(w http.ResponseWriter, req *http.Request) error {
 		mux.WriteChannel(sideband.ProgressMessage, []byte(node.Cid().String()))
 	}
 
+	// incase sideband muxer didn't send final pkt line
+	fmt.Fprintf(w, "0000")
 	return nil
 }
 

@@ -3,7 +3,6 @@ package server
 import (
 	"context"
 	"errors"
-	"fmt"
 
 	"github.com/go-git/go-git/v5/plumbing"
 	"github.com/go-git/go-git/v5/plumbing/protocol/packp"
@@ -48,7 +47,6 @@ func (s *session) AdvertisedReferences() (*packp.AdvRefs, error) {
 		return nil, err
 	}
 
-	fmt.Println(adv.Head)
 	return adv, nil
 }
 
